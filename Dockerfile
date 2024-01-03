@@ -13,7 +13,8 @@ RUN mkdir /stage && \
 
 FROM alpine:3.19
 
-RUN apk add --no-cache openssl ca-certificates
+RUN apk add --no-cache openssl ca-certificates gcompat
+
 
 COPY --from=build --chown=daemon:daemon /stage/writefreely /writefreely
 COPY bin/run.sh /writefreely/
@@ -26,4 +27,3 @@ EXPOSE 8080
 USER daemon
 
 ENTRYPOINT ["/writefreely/run.sh"]
-

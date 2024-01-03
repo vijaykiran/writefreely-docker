@@ -4,6 +4,8 @@ set -e
 CONFIG_FILE=/config/config.ini
 DB_FILE=/data/writefreely.db
 KEY_FILE=/data/keys/email.aes256
+
+
 WRITEFREELY="/writefreely/writefreely -c ${CONFIG_FILE}"
 
 if [ ! -s ${CONFIG_FILE} ]; then
